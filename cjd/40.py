@@ -11,13 +11,13 @@ c = Const('c', color) # evil
 def query(color, notx):
     res = False
     for i in [a, b, c]:
-        if id(i) == id(notx):
+        if eq(i, notx):
             ans = False
         else:
             ans = True
-        if id(i) == id(b):
+        if eq(i, b):
             ans = True
-        elif id(i) == id(c):
+        elif eq(i, c):
             ans = not ans
         res = If(i == color, ans, res)
     return res
@@ -28,4 +28,4 @@ s.add(query(white, a))
 s.add(query(blue, b))
 s.add(query(black, c))
 
-assert util.solve_unique(s, {'a': a, 'b': b, 'c': c})
+assert util.solve_all(s, {'a': a, 'b': b, 'c': c})

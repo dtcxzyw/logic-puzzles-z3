@@ -28,4 +28,4 @@ s.add(Not(query(pink, query(white, b == black))))
 s.add(Not(query(white, query(black, d == red))))
 s.add(query(black, query(red, And(a != pink, b != pink))))
 
-assert util.solve_unique(s, {'a': a, 'b': b, 'c': c, 'd': d, 'e': e})
+assert util.solve_all(s, {'a': a, 'b': b, 'c': c, 'd': d, 'e': e})

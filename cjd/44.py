@@ -20,7 +20,7 @@ num = {1: False, 2: False, 3: False, 4: False}
 for i in [a, b, c, d]:
     giveCount = 0
     for j in [a, b, c, d]:
-        if id(i) != id(j):
+        if not eq(i, j):
             give = Int(f'give{i}2{j}')
             s.add(give >= 0, give <= i)
             for n in num:
@@ -30,11 +30,11 @@ for i in [a, b, c, d]:
             final[str(j)] += give
             given[str(j)] = Or(given[str(j)], give > 0)
             giveCount = giveCount + If(give > 0, 1, 0)
-            if str(i) == 'a' and str(j) == 'b':
+            if eq(i, a) and eq(j, b):
                 s.add(give > 0)
-            if str(i) == 'b':
+            if eq(i, b):
                 s.add(Implies(give > 0, give == 3))
-            if str(j) == 'c':
+            if eq(j, c):
                 s.add(Implies(give > 0, give == 1))
     s.add(giveCount == 1)
 
@@ -44,4 +44,4 @@ for key in final:
 s.add(given['a'], given['b'], given['c'], given['d'])
 s.add(num[1], num[2], num[3], num[4])
 
-assert util.solve_unique(s, {'a': a, 'b': b, 'c': c, 'd': d, 'fa': final['a'], 'fb': final['b'], 'fc': final['c'], 'fd': final['d']})
+assert util.solve_all(s, {'a': a, 'b': b, 'c': c, 'd': d, 'fa': final['a'], 'fb': final['b'], 'fc': final['c'], 'fd': final['d']})

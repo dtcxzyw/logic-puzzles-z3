@@ -51,4 +51,4 @@ for v1, v2 in [(a1, a2), (b1, b2), (c1, c2), (d1, d2)]:
 s.add(c1 != blue)
 s.add(b1 == red)
 
-assert util.solve_unique(s, {'a1': a1, 'a2': a2, 'a3': a3, 'b1': b1, 'b2': b2, 'b3': b3, 'c1': c1, 'c2': c2, 'c3': c3, 'd1': d1, 'd2': d2, 'd3': d3})
+assert util.solve_all(s, {'a1': a1, 'a2': a2, 'a3': a3, 'b1': b1, 'b2': b2, 'b3': b3, 'c1': c1, 'c2': c2, 'c3': c3, 'd1': d1, 'd2': d2, 'd3': d3})

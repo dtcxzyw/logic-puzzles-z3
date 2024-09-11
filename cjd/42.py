@@ -23,4 +23,4 @@ s.add(sum3 == sum2 + 1)
 s.add(sum4 == sum3 + 1)
 s.add(b2 >= 2)
 
-assert util.solve_unique(s, {'a1': a1, 'a2': a2, 'a3': a3, 'a4': a4, 'b1': b1, 'b2': b2, 'b3': b3, 'b4': b4})
+assert util.solve_all(s, {'a1': a1, 'a2': a2, 'a3': a3, 'a4': a4, 'b1': b1, 'b2': b2, 'b3': b3, 'b4': b4})
