@@ -25,3 +25,6 @@ def solve_all(s: Solver, vars: dict):
 
 def count_eq(s, n):
     return PbEq([(i, 1) for i in s], n)
+
+def count_le(s, n):
+    return PbLe([(i, 1) for i in s], n)
