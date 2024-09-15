@@ -3,6 +3,7 @@ from z3 import *
 def solve_all(s: Solver, vars: dict):
     if s.check() != sat:
         return False
+    print(s.to_smt2())
 
     cnt = 0
     while True:
